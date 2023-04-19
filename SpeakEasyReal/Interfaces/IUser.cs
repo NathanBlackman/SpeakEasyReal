@@ -9,6 +9,6 @@ namespace SpeakEasyReal.Interfaces
         public User GetUserById(string firebaseId);
         public User UpdateUser(User user);
         public User CreateUser(User user);
-        public User DeleteUser(User user)
+        public User DeleteUser(User user);
     }
 }

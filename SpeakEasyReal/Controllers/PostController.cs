@@ -6,49 +6,49 @@ namespace SpeakEasyReal.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SoundController : Controller
+    public class PostController : Controller
     {
-        private readonly ISound _soundRepo;
-        public SoundController(ISound soundRepository)
+        private readonly IPost _postRepo;
+        public PostController(IPost postRepository)
         {
-            _soundRepo = soundRepository;
+            _postRepo = postRepository;
         }
 
         // Get
         [HttpGet]
-        public List<Sound> GetAllSounds()
+        public List<Post> GetAllPosts()
         {
-            return _soundRepo.GetAllSounds();
+            return _postRepo.GetAllPosts();
         }
 
         // Get by Id
         [HttpGet("{id}")]
-        public Sound GetSoundById(int id)
+        public Post GetPostById(int id)
         {
-            return _soundRepo.GetSoundById(id);
+            return _postRepo.GetPostById(id);
         }
         
         // Post
-        [HttpPost("postSound")]
-        public IActionResult CreateSound(Sound sound)
+        [HttpPost("postPost")]
+        public IActionResult CreatePost(Post post)
         {
-            var newSound = _soundRepo.CreateSound(sound);
-            return Ok(newSound);
+            var newPost = _postRepo.CreatePost(post);
+            return Ok(newPost);
         }
 
         // Update
-        [HttpPut("updateSound/{id}")]
-        public IActionResult UpdateSound(Sound sound)
+        [HttpPut("updatePost/{id}")]
+        public IActionResult UpdatePost(Post post)
         {
-            _soundRepo.UpdateSound(sound);
+            _postRepo.UpdatePost(post);
             return NoContent();
         }
 
         // Delete
-        [HttpDelete("deleteSound/{id}")]
-        public void DeleteSound(int id)
+        [HttpDelete("deletePost/{id}")]
+        public void DeletePost(int id)
         {
-            _soundRepo.DeleteSound(id);
+            _postRepo.DeletePost(id);
         }
 
     }

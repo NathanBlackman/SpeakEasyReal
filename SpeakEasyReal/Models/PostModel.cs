@@ -1,10 +1,10 @@
 ﻿namespace SpeakEasyReal.Models
 {
-    public class SoundModel
+    public class Post
     {
-        public int SoundId { get; set; }
+        public int PostId { get; set; }
         public int UserId { get; set; }
-        public string Title { get; set; }
-        public int SoundLength { get; set; }
+        public string? Title { get; set; }
+        public int PostLength { get; set; }
     }
 }
